@@ -6,48 +6,22 @@ function getYouTube() {
         dataType: "JSON",
         url: "https://www.googleapis.com/youtube/v3/search",
         data : {"key":"AIzaSyBnTgWWE0hOJKYooTahPdejU3LWBh2Ja4s",
-        "part":"snippet","maxResults":14,"q":"officalmusicvideo"},
+        "part":"snippet","maxResults":50,"q":"officalmusicvideo"},
         contentType: "application/json",
         success: function (jd) {
             let {items} = jd;
             let tempData="";
-            
-            items1 = items.slice(0, 4);
-            items2 = items.slice(5, 9);
-            items3 = items.slice(10);
 
-            tempData+='<div class="albums">';
-            for(item of items1){                
+            tempData+='<div class="albums"><table>';
+            for(item of items){                
                 tempData += `
-                <div class="album">
-                <img src="${item.snippet.thumbnails.high.url}">
-                <span class="title">${item.snippet.title}</span>
-                <span>${item.snippet.channelTitle}</span>
-                </div>`;
+                <tr>
+                <th><img src="${item.snippet.thumbnails.high.url}"></th>
+                <th><span class="title">${item.snippet.title}</span></th>
+                <th><span>${item.snippet.channelTitle}</span></th>
+                </tr>`;
             }
-            tempData+='</div>'
-
-            tempData+='<div class="albums">';
-            for(item of items2){                
-                tempData += `
-                <div class="album">
-                <img src="${item.snippet.thumbnails.high.url}">
-                <span class="title">${item.snippet.title}</span>
-                <span>${item.snippet.channelTitle}</span>
-                </div>`;
-            }
-            tempData+='</div>'
-
-            tempData+='<div class="albums">';
-            for(item of items3){                
-                tempData += `
-                <div class="album">
-                <img src="${item.snippet.thumbnails.high.url}">
-                <span class="title">${item.snippet.title}</span>
-                <span>${item.snippet.channelTitle}</span>
-                </div>`;
-            }
-            tempData+='</div>'
+            tempData+='</table></div>'
             
             console.log(tempData);
             albumDiv.append(tempData); 

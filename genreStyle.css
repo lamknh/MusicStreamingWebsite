@@ -1,0 +1,37 @@
+#contents{
+    height: 100%;
+}
+#contents .genre{
+    font-size: 24px;
+    text-align: center;
+    font-weight:bold;
+    color: white;
+    height : auto;
+    padding: 20px 0;
+}
+
+#contents #genre_div{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+#contents .genres{
+    transition: 0.4s ease;  
+}
+
+#contents .genres:hover{
+    background: #444444;
+    cursor:pointer;
+}
+
+#contents tr {
+    transition: 0.4s ease; 
+}
+#contents .genre table img{
+    height: auto;
+}
+#contents .genre table tr:hover{
+    background: #444444;
+    cursor:pointer;
+}

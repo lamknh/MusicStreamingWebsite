@@ -27,7 +27,7 @@ header{
 }
 #contents{
     min-height: 78vh;
-    height: 1120px;
+    height: auto;
     background: #222222;
     width: 83%;
     display: flex;
@@ -194,7 +194,7 @@ header .container a:hover {
 }
 #contents img{
     width: 200px;
-    height: 200px;
+    height: auto;
     padding : 10px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
@@ -206,10 +206,10 @@ header .container a:hover {
     display: block;
     color: rgba(255, 255, 255, 0.787);
     padding: 5px 0 0 15px;
-    font-size:10px;
+    font-size:16px;
 }
 #contents .title{
-    font-size: 12px;
+    font-size: 20px;
     font-weight:bold;
     color: white;
 }
