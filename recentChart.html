@@ -69,34 +69,32 @@
         </div>
     </div>
     <footer>
+        <!-- <div id=player ></div> -->
         <div class="container">
             <div class="playing-album">
-                <img src="src/cover.jpg">             
+                <div id="coverimg"></div>
+                <!-- <img id = "coverimg" src="src/cover.jpg">              -->
                 <div class="album-info">
-                    <span class="title">Another Life</span>
-                    <span>Kyle Patrick</span>
+                    <span class="title"></span>
+                    <span class ="chTitle"></span>
                 </div>
                 <i class="fa fa-heart" id="heart-icon" aria-hidden="true"></i>
             </div>
-            <audio id="player" src="./src/AnotherLife.mp3"></audio>
+            <!-- <audio id="player" src="./src/AnotherLife.mp3"></audio> -->
             <div class="player">
                 <div class="control">
-                    <i class="fa fa-random play" aria-hidden="true"></i>
-                    <i class="fa fa-step-backward step" aria-hidden="true"></i>
-                    <i class="fa fa-play-circle play-btn" id="playbtn"aria-hidden="true"></i>
-                    <i class="fa fa-step-forward step" aria-hidden="true"></i>
-                    <i class="fa fa-repeat play" aria-hidden="true"></i>
+                    <i class="fa fa-random play" id="randbtn" aria-hidden="true"></i>
+                    <i class="fa fa-step-backward step" id = "prebtn" aria-hidden="true"></i>
+                    <i class="fa fa-play-circle play-btn" id="playbtn" aria-hidden="true"></i>
+                    <i class="fa fa-step-forward step" id="nextbtn" aria-hidden="true"></i>
+                    <i class="fa fa-repeat play" id = "rptbtn" aria-hidden="true"></i>
                 </div>
                 <div class="progress-bar">
-                    <div id="current">
-                        0:00
-                    </div>
+                    <div id="current"></div>
                     <div id="bar">
                         <div id="progress"></div>
                     </div>
-                    <div id="end">
-                        4:16
-                    </div>
+                    <div id="end"></div>
                 </div>               
             </div>
             <div class="volume">
@@ -107,7 +105,7 @@
                         <i class="fa fa-list-ul" aria-hidden="true"></i>                        
                     </div>
                     <div class="volume-bar">
-                        <input type="range", min="0", max="100" value="40" id="myRange" class="slider">
+                        <input type="range", min="0", max="100" value="40" id="myRange" class="slider" oninput="controlVolume()" onchange="controlVolume()">
                     </div>
                 </div> 
             </div>

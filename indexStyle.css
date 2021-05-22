@@ -384,10 +384,10 @@ footer .container{
 }
 .control .play{
     font-size: 20px;
-    color : orangered; 
+    color : white; 
 }
 .control .play:hover{
-    color:white;
+    color:orangered
 }
 
 /* progress */
