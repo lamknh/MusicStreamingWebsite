@@ -51,7 +51,7 @@ function onYouTubeIframeAPIReady() {
             controls: 0,         		// 컨트롤러 false
             fs:0,
             loop: 1,             		// 반복재생 true
-            list: 'PLTC7VQ12-9rZRMqzpt9t69WxbcBBcMA5N',  		// 단일 영상 반복재생을 위해 동일한 ID를 넣는다.
+            list: 'PLX0hwC_zw_t-r0XT_dmIHyDBTniU-_hQO',  		// 단일 영상 반복재생을 위해 동일한 ID를 넣는다. 
         },
         events: {
         'onReady': onPlayerReady,//로딩중에 이벤트 실행한다
