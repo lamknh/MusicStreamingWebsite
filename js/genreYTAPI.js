@@ -1,4 +1,5 @@
 let tempData="";
+var playlist_id;
 
 function getDuration(duration){
     var hourRegex = new RegExp("[0-9]{1,2}H", "gi");
@@ -81,6 +82,12 @@ function getYouTube(playlistId) {
         contentType: "application/json",
         success: function (jd) {
             let {items} = jd;
+            $("#playall").append('<i class="fa fa-play-circle playall" id="playall" aria-hidden="true"> 전체 재생</i>');
+            $(function(){
+                document.getElementById("playall").onclick = () =>{
+                    playlistAll(playlist_id);
+                }
+            })
             tempData+='<div class="genre"><table>';
             for(item of items){                
                 // getVideo(item.snippet.resourceId.videoId);
@@ -104,12 +111,16 @@ function getYouTube(playlistId) {
 
 $(function(){
     document.getElementById("hiphop").onclick = () => {
-        getYouTube("PLetgZKHHaF-Zq1Abh-ZGC4liPd_CV3Uo4");
+        playlist_id = "PLetgZKHHaF-Zq1Abh-ZGC4liPd_CV3Uo4";
+        getYouTube(playlist_id);
     }
     document.getElementById("rock").onclick = () => {
-        getYouTube("PLTC7VQ12-9rZRMqzpt9t69WxbcBBcMA5N");
+        playlist_id = "PLTC7VQ12-9rZRMqzpt9t69WxbcBBcMA5N";
+        getYouTube(playlist_id);
     }
     document.getElementById("pop").onclick = () => {
-        getYouTube("PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10");
+        playlist_id = "PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10";
+        getYouTube(playlist_id);
     }
 })
+

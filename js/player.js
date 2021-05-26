@@ -63,6 +63,7 @@ function onYouTubeIframeAPIReady() {
 function onPlayerReady(event) {
 //로딩된 후에 실행될 동작을 작성한다(소리 크기,동영상 속도를 미리 지정하는 것등등...)
     //event.target.playVideo();//자동재생
+    
     var audio_info = event.target.getVideoData();
     if(audio_info.title != '') {
         // togglePlay();
@@ -95,6 +96,17 @@ function onPlayerStateChange(event) {
     	// 일시정지
         stopAudioTimer(); // 오디오 재생시 타이머 중지
     } 
+}
+
+function playlistAll(playlist_Id){
+    player.stopVideo();
+    player.loadPlaylist({
+        'list': playlist_Id,
+        'listType': 'playlist',
+        'index': 0,
+        'startSeconds': 0,
+        'suggestedQuality': 'small'
+    });
 }
 
 function togglePlay() {

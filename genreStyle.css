@@ -35,3 +35,17 @@
     background: #444444;
     cursor:pointer;
 }
+
+#playall{
+    float:right;
+    width : 100px;
+    height : 24px;
+    color : white;
+    padding-right: 10%;
+    font-size: 16px;
+}
+
+#playall :hover{
+    color : orangered;
+    cursor:pointer;
+}
