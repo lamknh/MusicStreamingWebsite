@@ -113,7 +113,7 @@ let vid; // 클릭된 videoId
 
 function onClick(id){
     vid = id;
-    alert(vid);
+    //alert(vid);
     clickPlay(vid);
 }
 
