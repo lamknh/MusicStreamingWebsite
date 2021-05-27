@@ -15,7 +15,7 @@ function getYouTube() {
             tempData+='<div class="albums"><table>';
             for(item of items){                
                 tempData += `
-                <tr>
+                <tr class="youtubeId" id="${item.snippet.resourceId.videoId}">
                 <th><img src="${item.snippet.thumbnails.high.url}"></th>
                 <th><span class="title">${item.snippet.title}</span></th>
                 <th><span>${item.snippet.channelTitle}</span></th>
@@ -34,4 +34,8 @@ function getYouTube() {
 
 $(function(){
     getYouTube();
+
+    $(document).on('click', '.youtubeId', function(){
+        onClick($(this).attr('id'));
+    })
 })
