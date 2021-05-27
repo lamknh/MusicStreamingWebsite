@@ -109,6 +109,23 @@ function playlistAll(playlist_Id){
     });
 }
 
+let vid; // 클릭된 videoId
+
+function onClick(id){
+    vid = id;
+    alert(vid);
+    clickPlay(vid);
+}
+
+function clickPlay(vid){
+    player.stopVideo();
+    player.loadVideoById({
+        'videoId': vid,
+        'startSeconds': 0,
+        'suggestedQuality': 'small'
+    })
+}
+
 function togglePlay() {
 
     if(player.getPlayerState() == YT.PlayerState.PAUSED){

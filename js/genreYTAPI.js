@@ -1,67 +1,6 @@
 let tempData="";
 var playlist_id;
 
-function getDuration(duration){
-    var hourRegex = new RegExp("[0-9]{1,2}H", "gi");
-    var minRegex = new RegExp("[0-9]{1,2}M", "gi");
-    var secRegex = new RegExp("[0-9]{1,2}S", "gi");
-    
-    var hour = hourRegex.exec(duration);
-    var min = minRegex.exec(duration);
-    var sec = secRegex.exec(duration);
-    
-    if(hour!==null){
-        hour = hour.toString().split("H")[0] + ":";
-    }else{
-        hour = "";
-    }
-    if(min !==null){
-        min = min.toString().split("M")[0];
-        if(min.length<2){
-        min = "0"+min;
-    }
-    }else{
-        min = "00";
-    }
-    if(sec !==null){
-        sec = sec.toString().split("S")[0];
-        if(sec.length<2){
-        sec = "0"+sec;
-    }
-    }else{
-        sec = "00";
-    }
-    duration = hour+min+":"+sec;
-    
-    return duration;
-}
-
-function getVideo(vid){
-    //let duration = getDuration(item.contentDetails.duration);
-
-    $.ajax({
-        type: "GET",
-        dataType: "JSON",
-        url: "https://www.googleapis.com/youtube/v3/videos",
-        data : {"key":"AIzaSyBnTgWWE0hOJKYooTahPdejU3LWBh2Ja4s",
-        "part": "contentDetails",
-        "id":vid
-        },
-        contentType: "application/json",
-        success: function (jd) {
-            let {items} = jd;
-            for(item of items){
-                console.log(item.contentDetails.duration)
-                tempData += `<th>${item.snippet.resourceId.videoId}</th>
-                </tr>`     
-            }
-        },
-        error: function (xhr, status, error) {
-            console.log("유튜브 요청 에러: " + error);
-        }
-    });
-}
-
 function getYouTube(playlistId) {
     let genreDiv = $('#genre_div');
     let genres = $('.genres')
@@ -90,14 +29,12 @@ function getYouTube(playlistId) {
             })
             tempData+='<div class="genre"><table>';
             for(item of items){                
-                // getVideo(item.snippet.resourceId.videoId);
                 tempData += `
-                <tr>
+                <tr class="youtubeId" id="${item.snippet.resourceId.videoId}">
                 <th><img src="${item.snippet.thumbnails.high.url}"></th>
                 <th>${item.snippet.title}</th>
                 <th>${item.snippet.videoOwnerChannelTitle}</th>
                 `;
-                getVideo(item.snippet.videoId);
             }
             tempData+='</table></div>'
             
@@ -122,5 +59,9 @@ $(function(){
         playlist_id = "PL4o29bINVT4EG_y-k5jGoOu3-Am8Nvi10";
         getYouTube(playlist_id);
     }
+
+    $(document).on('click', '.youtubeId', function(){
+        onClick($(this).attr('id'));
+    })
 })
 
