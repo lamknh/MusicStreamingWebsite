@@ -19,7 +19,10 @@ function getYouTube() {
         dataType: "JSON",
         url: "https://www.googleapis.com/youtube/v3/search",
         data : {"key":"AIzaSyBnTgWWE0hOJKYooTahPdejU3LWBh2Ja4s",
-        "part":"snippet","maxResults":50,"q":"kakao"},  //"kakao"를 search로 변경해야함.
+        "part":"snippet",
+        "maxResults":50,
+        "q":search
+    },  //"kakao"를 search로 변경해야함.
         contentType: "application/json",
         success: function (jd) {
             let {items} = jd;
@@ -28,7 +31,7 @@ function getYouTube() {
             tempData+='<div class="albums"><table>';
             for(item of items){                
                 tempData += `
-                <tr class="youtubeId" id="${item.snippet.resourceId.videoId}">
+                <tr class="youtubeId" id="${item.id.videoId}">
                 <th><img src="${item.snippet.thumbnails.high.url}"></th>
                 <th><span class="title">${item.snippet.title}</span></th>
                 <th><span>${item.snippet.channelTitle}</span></th>

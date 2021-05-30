@@ -52,7 +52,7 @@ $(function(){
         getYouTube(playlist_id);
     }
     document.getElementById("rock").onclick = () => {
-        playlist_id = "PLTC7VQ12-9rZRMqzpt9t69WxbcBBcMA5N";
+        playlist_id = "PL6Lt9p1lIRZ311J9ZHuzkR5A3xesae2pk";
         getYouTube(playlist_id);
     }
     document.getElementById("pop").onclick = () => {

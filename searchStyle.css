@@ -1,0 +1,44 @@
+#contents{
+    height: 100%;
+}
+/* #searchlist{
+    font-size: 100px;
+    background: #222222;
+    color : white;
+    width: 83%;
+    display: flex;
+    float: right;
+    font-size: 24px;
+    text-align: center;
+    font-weight:bold;
+    height : 100%;
+    padding: 20px 0;
+
+    
+} */
+#searchresult{
+    font-size: 24px;
+    font-weight:bold;
+    color: white;
+    height : auto;
+    padding: 20px 0;
+}
+
+#contents #genre_div{
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0;
+}
+
+#contents tr{
+    transition: 0.4s ease;  
+}
+
+#contents #searchlist table img{
+    height: auto;
+}
+
+#contents #searchlist table tr:hover{
+    background: #444444;
+    cursor:pointer;
+}

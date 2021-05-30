@@ -89,6 +89,7 @@ header .container a:hover {
 .search-box:hover > .search-btn{
     background: white;
     color: orangered;
+    cursor : pointer;
 }
 .search-btn{
     float: right;
