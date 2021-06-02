@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layouts/header'); -%>
+    <!-- css style -->
+    <link rel="stylesheet" href="/css/chartStyle.css">
+    <link rel="stylesheet" href="/css/genreStyle.css">
+    <title>MusicStreaming | Chart</title>
+</head>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <%- include('layouts/sidebar'); -%>
+    <div id="contents">
+      <div class="container">
+          <div class="genreTitle">
+              <h2>최신 차트</h2>
+              <div id="playall"></div>
+          </div>
+          <div id="genre_div">
+              
+          </div>
+      </div>
+  </div>
+    <%- include('layouts/footer'); -%>
+    <%- include('layouts/scripts'); -%>   
+    <script type="text/javascript" src="/js/recentYTAPI.js"></script>
+</body>
+</html>

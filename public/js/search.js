@@ -3,7 +3,7 @@ var searchValue;
 function search_input() {
     var sv = document.getElementById("searchtext").value;
     searchValue = encodeURI(sv);
-    location.href = "search.html?"+searchValue;
+    location.href = "/search?"+searchValue;
 }
 
 
@@ -13,7 +13,6 @@ function getYouTube() {
     let albumDiv = $('#searchlist');
     let result = $('#searchresult');
     result.append("'"+search+"'에 대한 검색 결과입니다");
-        
     $.ajax({
         type: "GET",
         dataType: "JSON",
@@ -49,9 +48,9 @@ function getYouTube() {
 }
 
 $(function(){
-    getYouTube();
+  getYouTube();
 
-    $(document).on('click', '.youtubeId', function(){
-        onClick($(this).attr('id'));
-    })
+  $(document).on('click', '.youtubeId', function(){
+      onClick($(this).attr('id'));
+  })
 })

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('layouts/header'); -%>
+    <!-- css style -->
+    <link rel="stylesheet" href="/css/chartStyle.css">
+    <link rel="stylesheet" href="/css/genreStyle.css">
+    <title>MusicStreaming | Genre</title>
+    <!--<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>-->
+
+</head>
+<body>
+    <%- include('layouts/navbar'); -%>
+    <%- include('layouts/sidebar'); -%>
+    <div id="contents">
+        <div class="container">
+            <div class="genreTitle">
+                <h2>장르 음악</h2>
+                <div id="playall"></div>
+            </div>
+            
+            <div id="genre_div">
+                <div class="genres" id="hiphop">
+                    <img src="https://i.scdn.co/image/ab67706f0000000202ab1ce4062fffcd1f5e8279">
+                    <span class="genre title">Hip Hop</span>
+                </div>
+                <div class="genres" id="rock">
+                    <img src="https://i.scdn.co/image/ab67706f000000023ac963e482f1518b4d671374">
+                    <span class="genre title">Rock</span>
+                </div>
+                <div class="genres" id="pop">
+                    <img src="https://i.scdn.co/image/ab67706f00000002a259e07a24c5b6ccf60de2d3">
+                    <span class="genre title">Pop</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--수정-->
+    <%- include('layouts/footer'); -%>
+    <!-- js -->
+    <%- include('layouts/scripts'); -%>    
+    <script type="text/javascript" src="/js/genreYTAPI.js"></script> 
+</body>
+</html>
