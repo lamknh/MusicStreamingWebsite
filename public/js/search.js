@@ -7,7 +7,7 @@ function search_input() {
 }
 
 
-function getYouTube() {
+function sgetYouTube() {
     var url = decodeURI(location.href);
     var search = url.slice(url.indexOf('?') + 1, url.length);
     let albumDiv = $('#searchlist');
@@ -48,7 +48,7 @@ function getYouTube() {
 }
 
 $(function(){
-  getYouTube();
+  sgetYouTube();
 
   $(document).on('click', '.youtubeId', function(){
       onClick($(this).attr('id'));

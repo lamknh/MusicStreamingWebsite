@@ -1,3 +1,5 @@
+var playlist_id;
+
 function getYouTube() {
     let genreDiv = $('#genre_div');
     let genres = $('.genres')
@@ -41,6 +43,7 @@ function getYouTube() {
 }
 
 $(function(){
+    playlist_id = "PL2HEDIx6Li8jGsqCiXUq9fzCqpH99qqHV";
     getYouTube();
 
     $(document).on('click', '.youtubeId', function(){

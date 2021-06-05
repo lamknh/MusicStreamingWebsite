@@ -1,3 +1,9 @@
+.search-box:hover > .search-btn{
+    background: white;
+    color: orangered;
+    cursor : pointer;
+}
+
 #contents{
     height: 100%;
 }
